@@ -25,7 +25,7 @@ test:
   database: hppod_test
   pool: 5
   username: root
-  password:
+  password: mugbyffufs
   socket: /tmp/mysql.sock
 
 production:
@@ -35,5 +35,5 @@ production:
   database: hppod_production
   pool: 5
   username: root
-  password:
+  password: mugbyffufs
   socket: /tmp/mysql.sock

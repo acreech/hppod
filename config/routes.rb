@@ -1,4 +1,12 @@
 Hppod::Application.routes.draw do
+  resources :contents
+
+  resources :manuals
+
+  resources :companies
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
