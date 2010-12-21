@@ -1,0 +1,35 @@
+<h1>Listing contents</h1>
+
+<table>
+  <tr>
+    <th>Manual</th>
+    <th>Section number</th>
+    <th>Section name</th>
+    <th>Description</th>
+    <th>Manufacturer</th>
+    <th>Product number</th>
+    <th>Pdf</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contents.each do |content| %>
+  <tr>
+    <td><%= link_to content.manual.description, manual_path(content.manual_id) %></td>
+    <td><%= content.section_number %></td>
+    <td><%= content.section_name %></td>
+    <td><%= content.description %></td>
+    <td><%= content.manufacturer %></td>
+    <td><%= content.product_number %></td>
+    <td><%= content.pdf %></td>
+    <td><%= link_to 'Show', content %></td>
+    <td><%= link_to 'Edit', edit_content_path(content) %></td>
+    <td><%= link_to 'Destroy', content, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Content', new_content_path %>

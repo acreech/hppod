@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  manual_id: 1
+  section_number: MyString
+  section_name: MyString
+  description: MyString
+  manufacturer: MyString
+  product_number: MyString
+  pdf: 
+
+two:
+  manual_id: 1
+  section_number: MyString
+  section_name: MyString
+  description: MyString
+  manufacturer: MyString
+  product_number: MyString
+  pdf: 

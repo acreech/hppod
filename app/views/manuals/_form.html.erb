@@ -1,0 +1,33 @@
+<%= form_for(@manual) do |f| %>
+  <% if @manual.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manual.errors.count, "error") %> prohibited this manual from being saved:</h2>
+
+      <ul>
+      <% @manual.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_id %><br />
+    <%= f.collection_select(:company_id, Company.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :edition %><br />
+    <%= f.text_field :edition %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

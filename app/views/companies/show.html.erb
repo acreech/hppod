@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @company.name %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+<br>&nbsp;<br>
+<h2>Users</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%  @company.users.each do |user| 
+	%>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Manuals</h2>
+<table>
+<tr>
+    <th>Serial</th>
+    <th>Edition</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @company.manuals.each do |manual| %>
+  <tr>
+    <td><%= manual.serial %></td>
+    <td><%= manual.edition %></td>
+    <td><%= manual.description %></td>
+    <td><%= link_to 'Show', manual %></td>
+    <td><%= link_to 'Edit', edit_manual_path(manual) %></td>
+    <td><%= link_to 'Destroy', manual, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

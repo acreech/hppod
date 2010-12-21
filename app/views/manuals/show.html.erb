@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= link_to @manual.company.name, company_path(@manual.company_id) %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%= @manual.serial %>
+</p>
+
+<p>
+  <b>Edition:</b>
+  <%= @manual.edition %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @manual.description %>
+</p>
+<%= link_to 'Edit', edit_manual_path(@manual) %> |
+<%= link_to 'Back', manuals_path %>
+<br>&nbsp;<br>
+<h2>Content</h2>
+<table>
+<tr>
+    <th>Section number</th>
+    <th>Section name</th>
+    <th>Description</th>
+    <th>Manufacturer</th>
+    <th>Product number</th>
+    <th>Pdf</th>
+    <th></th>
+    <th></th>
+    <th></th>
+</tr>
+<% @manual.contents.each do |content| %>
+<tr>
+    <td><%= content.section_number %></td>
+    <td><%= content.section_name %></td>
+    <td><%= content.description %></td>
+    <td><%= content.manufacturer %></td>
+    <td><%= content.product_number %></td>
+    <td><%= content.pdf %></td>
+    <td><%= link_to 'Show', content %></td>
+    <td><%= link_to 'Edit', edit_content_path(content) %></td>
+    <td><%= link_to 'Destroy', content, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+

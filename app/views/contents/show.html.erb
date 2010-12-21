@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manual:</b>
+  <%= @content.manual_id %>
+</p>
+
+<p>
+  <b>Section number:</b>
+  <%= @content.section_number %>
+</p>
+
+<p>
+  <b>Section name:</b>
+  <%= @content.section_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @content.description %>
+</p>
+
+<p>
+  <b>Manufacturer:</b>
+  <%= @content.manufacturer %>
+</p>
+
+<p>
+  <b>Product number:</b>
+  <%= @content.product_number %>
+</p>
+
+<p>
+  <b>Pdf:</b>
+  <%= @content.pdf %>
+</p>
+
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
